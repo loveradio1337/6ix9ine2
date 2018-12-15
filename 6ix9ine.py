@@ -92,8 +92,9 @@ print(f"Connecting your bot to discord!")
 # remove help
 bot.remove_command('help')
 # variables
-DMs = "```I wrote  you the information, Please check your DMs ```"
-
+@bot.event
+async def on_ready():
+    print("STFU LETS GO!")
 # help
 
 
@@ -106,9 +107,9 @@ async def help(ctx):
 
       embed = discord.Embed(color=0xD2DCE5)
       embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-      embed.add_field(name='⚙ __Moderation Commands__ ⚙', value = '``>help_moderation``\nAbout Moderation Commands.')
-      embed.add_field(name='\n👥 __General Commands__ 👥', value = '``>help_general``\nAbout General Commands.')
-      embed.add_field(name='\n🤡 __Fun Commands__ 🤡', value = '``>help_fun``\nAbout Fun Commands.')
+      embed.add_field(name=' __Moderation Commands__ ', value = '``>help_moderation``\nAbout Moderation Commands.')
+      embed.add_field(name='\n __General Commands__ ', value = '``>help_general``\nAbout General Commands.')
+      embed.add_field(name='\n __Fun Commands__ ', value = '``>help_fun``\nAbout Fun Commands.')
       await bot.say(embed=embed)
 
 # help moderation
@@ -123,7 +124,7 @@ async def help_moderation(ctx):
 
       embed = discord.Embed(color=0xD2DCE5)
  
-      embed.add_field(name=' __Moderation Commands__', value = '**THIS COMMANDS NEEDS PERMISION FROM OWNER TO USE THEM**\n``>help for more information.``')
+      embed.add_field(name=' __Moderation Commands__ ', value = '**THIS COMMANDS NEEDS PERMISION FROM OWNER TO USE THEM**\n``>help for more information.``')
       embed.add_field(name='>kick', value = ' kick a user from the server/guild.')
       embed.add_field(name='>ban', value = ' ban a user from the server/guild.')
       embed.add_field(name='>slowclear', value = ' it will slowy clearing all messages from the channel.')
@@ -144,7 +145,6 @@ async def help_moderation(ctx):
       embed.add_field(name='>emojirename', value = ' this will rename an emoji.')
       embed.add_field(name='>announce', value = '  this will dm all users to announce.')
       await bot.send_message(author, embed=embed)
-      await bot.say(DMs)
 
 # help_general
 
@@ -157,7 +157,7 @@ async def help_general(ctx):
 
       embed = discord.Embed(color=0xD2DCE5)
 
-      embed.add_field(name = '👥 __General commands__', value= '``>help for more information.``')
+      embed.add_field(name = ' __General commands__ ', value= '``>help for more information.``')
       embed.add_field(name='>userinfo', value = 'to  see the users information.')
       embed.add_field(name='>botinfo', value = ' this will show Coco BOTs information.')
       embed.add_field(name='>serverinfo', value = ' this will show the information of server/guild.')
@@ -197,7 +197,8 @@ async def help_general(ctx):
       embed.add_field(name='>kickme', value = ' you will ask for kick your self.')
       embed.add_field(name='>userip', value = ' this will show the users ip, this will work if the user is in the database.')
       await bot.send_message(author, embed=embed)
-      await bot.say(DMs)
+
+# help_config
 
 # help_fun
 
@@ -209,7 +210,7 @@ async def help_fun(ctx):
       author = ctx.message.author
       embed = discord.Embed(color=0xD2DCE5)
 
-      embed.add_field(name=' __Fun Coammands__', value='``>help for more information.``')
+      embed.add_field(name=' __Fun Coammands__ ', value='``>help for more information.``')
       embed.add_field(name='>8ball', value = ' this will answer your question.')
       embed.add_field(name='>hug', value = '  you will hug the user.')
       embed.add_field(name='>gender', value = '  this will say the users gender.')
@@ -237,6 +238,79 @@ async def help_fun(ctx):
       embed.add_field(name='>lenny', value = ' this will show the lennys face!!.')
       embed.add_field(name='>autistcheck', value = ' this will say the users austistic percentage.')
       embed.add_field(name='>tweet', value = ' this will tweet the username and text.')
+      embed.add_field(name='>windowsupdate', value = ' this will update your windows.')
+      embed.add_field(name='>awooify', value = ' this will awooify the user.')
+      embed.add_field(name='>ship', value = ' this will show how the users love each other lol.')
+
       await bot.send_message(author, embed=embed)
-      await bot.say(DMs)
+
+@bot.command(pass_context=True)
+async def windowsupdate(ctx):
+    try:
+        lol = 0.80
+        await bot.say("Checking for updates!")
+        await bot.say("Updates found")
+        msg1 = await bot.say("Downloading Updates : ")
+        msg2 = await bot.edit_message(msg1, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg3 = await bot.edit_message(msg2, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg4 = await bot.edit_message(msg3, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg5 = await bot.edit_message(msg4, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg6 = await bot.edit_message(msg5, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg7 = await bot.edit_message(msg6, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg8 = await bot.edit_message(msg7, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg9 = await bot.edit_message(msg8, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg10 = await bot.edit_message(msg9, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg11 = await bot.edit_message(msg10, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg12 = await bot.edit_message(msg11, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg13 = await bot.edit_message(msg12, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg14 = await bot.edit_message(msg13, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg15 = await bot.edit_message(msg14, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg16 = await bot.edit_message(msg15, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg17 = await bot.edit_message(msg16, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg18 = await bot.edit_message(msg17, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg19 = await bot.edit_message(msg18, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg20 = await bot.edit_message(msg19, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg21 = await bot.edit_message(msg20, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg22 = await bot.edit_message(msg21, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg23 = await bot.edit_message(msg22, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg24 = await bot.edit_message(msg23, "Downloading Updates : ")
+        await asyncio.sleep(lol)
+        msg25 = await bot.edit_message(msg24, "Downloading Updates : ")
+        await bot.say("Successfully downloaded the updates")
+        msg26 = await bot.say("Installing the updates : Updates failed to install")
+        await asyncio.sleep(lol)
+        await bot.say("Retrying")
+        await asyncio.sleep(lol)
+        await bot.say("Failed trying to re-install the updates")
+        await asyncio.sleep(lol)
+        await bot.say("Your computer will now restart")
+        await asyncio.sleep(lol)
+        await bot.say("Computer failed to restart")
+        await asyncio.sleep(lol)
+        await bot.say("Deleting system32 for a force restart")
+        await asyncio.sleep(lol)
+        await bot.say("Successfully deleted system32, Bye Bye BOI...")
+
 bot.run(os.environ['mytoken'])
