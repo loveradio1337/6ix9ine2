@@ -313,4 +313,4 @@ async def windowsupdate(ctx):
         await asyncio.sleep(lol)
         await bot.say("Successfully deleted system32, Bye Bye BOI...")
 
-bot.run('mytoken')
+bot.run(environ.get('mytoken'))
