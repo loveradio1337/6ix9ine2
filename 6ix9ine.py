@@ -85,7 +85,7 @@ import logging
 import colorsys
 import socket
 
-bot = Bot(description="Coco BOT is best", command_prefix=">")
+bot = Bot(description="like is best", command_prefix=">")
 
 
 print(f"Connecting your bot to discord!")
@@ -159,11 +159,11 @@ async def help_general(ctx):
 
       embed.add_field(name = ' __General commands__ ', value= '``>help for more information.``')
       embed.add_field(name='>userinfo', value = 'to  see the users information.')
-      embed.add_field(name='>botinfo', value = ' this will show Coco BOTs information.')
+      embed.add_field(name='>botinfo', value = " this will show Like's information.")
       embed.add_field(name='>serverinfo', value = ' this will show the information of server/guild.')
       embed.add_field(name='>invite', value = ' to invite me in your server/guild.')
       embed.add_field(name='>serverinfo', value = ' to show all users on the server/guild.')
-      embed.add_field(name='>servercount', value = ' it will show on how many server/guild is Coco BOT in.')
+      embed.add_field(name='>servercount', value = ' it will show on how many server/guild is Like in.')
       embed.add_field(name='>stringgen', value = ' this will string gen the numbers.')
       embed.add_field(name='>avatar', value = ' this will show the avatar of the user.')
       embed.add_field(name='>say', value = ' this will say you want me to say.')
@@ -188,7 +188,7 @@ async def help_general(ctx):
       embed.add_field(name='>serverowner', value = ' this will show the information of the server/guild owner.')
       embed.add_field(name='>statcheck', value = ' this will show you the status of a user.')
       embed.add_field(name='>gamecheck', value = ' this will show you on what the user doing.')
-      embed.add_field(name='>vote', value = ' it shows the voting link for Coco BOT.')
+      embed.add_field(name='>vote', value = ' it shows the voting link for Like.')
       embed.add_field(name='>channelinfo', value = ' this will show you the information of the channel.')
       embed.add_field(name='>docs', value = ' this will send you the link for discord docs.')
       embed.add_field(name='>nick', value = ' this will nickname a user.')
