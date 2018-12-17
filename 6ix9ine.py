@@ -229,9 +229,32 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name='>tweet', value=' this will tweet the username and text.')
         embed.add_field(name='>awooify', value=' this will awooify the user.')
         embed.add_field(name='>ship', value=' this will show how the users love each other lol.')
+        embed.add_field(name='>meme', value='This will show super duper alot of memes.')
         react_message = await bot.send_message(user,embed=embed)
         react_1 = '⚙'
         react_2 = '👥'
         await bot.add_reaction(react_message, reaction)
+
+@bot.event
+async def on_member_join(member):
+    for channel in member.server.channels:
+        if channel.name == 'welcome':
+            embed = discord.Embed(title=f'🎉Welcome {member.name} to {member.server.name}🎉', description='Please 🙏 do not forget to read the rules and dont try to break any one of them👼', color=0xC72323)
+            embed.add_field(name='__Thanks for joining__', value='**I hope you will be active here.😉**', inline=True)
+            embed.set_thumbnail(url='https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif') 
+            embed.set_image(url = member.avatar_url)
+            embed.add_field(name='__Join position__', value='{}'.format(str(member.server.member_count)), inline=True)
+            await bot.send_message(channel, embed=embed) 
+            nickname= '✴🔆 ' + member.name + ' 🔆✴'
+            await client.change_nickname(member, nickname)
+
+@bot.event
+async def on_member_remove(member):
+    for channel in member.server.channels:
+        if channel.name == 'welcome':
+            embed = discord.Embed(title=f'{member.name} just left {member.server.name}', description='Good bye 👋! We will gonna miss you 😢', color=0xC72323)
+            embed.add_field(name='__User left__', value='**We hope you will be back soon 🙋.**', inline=True)
+            embed.set_thumbnail(url=member.avatar_url)
+            await bot.send_message(channel, embed=embed)
 
 bot.run(os.environ['mytoken'])
