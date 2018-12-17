@@ -101,7 +101,7 @@ async def on_ready():
 # help
 
 
-@client.command(pass_context = True)
+@bot.command(pass_context = True)
 async def help(ctx):
     if ctx.message.author.bot:
       return
@@ -116,18 +116,18 @@ async def help(ctx):
       embed.add_field(name="Donation Link", value="[HERE](https://paypal.me/CocoGT)")
       embed.add_field(name="Wanna vote for Like?", value="[👉 UPVOTE ME PLEASE 👈](https://discordbots.org/bot/507241518524923904/vote)")
       embed.set_thumbnail(botavatar)
-      dm_message = await client.send_message(author,embed=embed)
+      dm_message = await bot.send_message(author,embed=embed)
       react_1 = '⚙'
       react_2 = '👥'
       react_3 = '😁'
-      await client.add_reaction(dm_message, react_1)
-      await client.add_reaction(dm_message, react_2)
-      await client.add_reaction(dm_message, react_3)
+      await bot.add_reaction(dm_message, react_1)
+      await bot.add_reaction(dm_message, react_2)
+      await bot.add_reaction(dm_message, react_3)
 
 
 # help moderation
 
-@client.event
+@bot.event
 async def on_reaction_add(reaction, user):
   if reaction.message.server is None:
       if reaction.emoji == '⚙':
@@ -157,8 +157,6 @@ async def on_reaction_add(reaction, user):
         react_1 = '👥'
         react_2 = '😁'
         await bot.add_reaction(react_message, reaction)
-
-
       if reaction.emoji == '👥':
         embed = discord.Embed(color=0xC72323)
 
