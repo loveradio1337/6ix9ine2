@@ -145,6 +145,7 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name='', value='``>voicechannel`` - this will create a voice channel.\n``>nickall`` - this will nickname all users he can.')
         embed.add_field(name='', value='``>renamechannel`` - this will rename a text/voice channel.\n``>emojirename`` - this will rename an emoji.')
         embed.add_field(name='', value='``>announce`` - this will dm all users to announce.')
+        react_message = await bot.send_message(user,embed=embed)
         react_1 = '👥'
         react_2 = '😁'
         await bot.add_reaction(react_message, reaction)
@@ -185,10 +186,10 @@ async def on_reaction_add(reaction, user):
         embed.add_field(name='>membernames', value=' this will dm all users name on the server/guild.')
         embed.add_field(name='>kickme', value=' you will ask for kick your self.')
         embed.add_field(name='>userip', value=' this will show the users ip, this will work if the user is in the database.')
+        react_message = await bot.send_message(user,embed=embed)
         react_1 = '⚙'
         react_2 = '😁'
         await bot.add_reaction(react_message, reaction)
-
 
       if reaction.emoji == '😁':
         embed = discord.Embed(color=0xC72323)
