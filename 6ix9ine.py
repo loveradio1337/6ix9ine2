@@ -115,6 +115,7 @@ async def help(ctx):
       embed.add_field(name="Bot Invite", value="[👉 Invite Like HERE 👈]( https://discordapp.com/api/oauth2/authorize?client_id=507241518524923904&,permissions=8&scope=bot)")
       embed.add_field(name="Donation Link", value="[HERE](https://paypal.me/CocoGT)")
       embed.add_field(name="Wanna vote for Like?", value="[👉 UPVOTE ME PLEASE 👈](https://discordbots.org/bot/507241518524923904/vote)")
+      embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
       embed.set_thumbnail(url=botavatar)
       dm_message = await bot.send_message(author,embed=embed)
       react_1 = '⚙'
