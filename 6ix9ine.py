@@ -102,7 +102,7 @@ async def on_ready():
 
 
 @bot.command(pass_context = True)
-async def help(ctx):
+#async def help(ctx):
     if ctx.message.author.bot:
       return
     else:
@@ -129,7 +129,7 @@ async def help(ctx):
 # help moderation
 
 @bot.event
-async def on_reaction_add(reaction, user):
+#async def on_reaction_add(reaction, user):
   if reaction.message.server is None:
       if reaction.emoji == "⚙":
 
@@ -234,6 +234,7 @@ async def on_reaction_add(reaction, user):
         react_1 = '⚙'
         react_2 = '👥'
         await bot.add_reaction(react_message, reaction)
+# fun 
 
 @bot.event
 async def on_member_join(member):
