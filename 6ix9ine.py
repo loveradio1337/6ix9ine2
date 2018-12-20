@@ -108,22 +108,28 @@ async def test (ctx):
 @bot.event
 async def on_member_join(member):
     for channel in member.server.channels:
-        if channel.name == 'welcome', 'welcome2', 'welcome3':
+        if channel.name == '🎉-welcome-🎊':
             embed = discord.Embed(color=0xC72323)
             embed.set_author(name=f':tada: Welcome **{member.name}** to **{member.server.name}** :tada:')
             embed.description='Please 🙏 do not forget to respect each others.'
             embed.set_thumbnail(url=member.avatar_url) 
             embed.set_footer(text='We now have {} members'.format(str(member.server.member_count)))
             await bot.send_message(channel, embed=embed) 
-            nickname= '🔰♈ ' + member.name + ' ♈🔰'
-            await bot.change_nickname(member, nickname)
+#            nickname= '🔰♈ ' + member.name + ' ♈🔰'
+#            await bot.change_nickname(member, nickname)
+    print("This user "+ member.name)
+    channel = discord.utils.get(client.get_all_channels(), server__name="BC GAMER'S", name='🎉-welcome-🎊')
+    embed = discord.Embed(title=f'🎀{member.name} welcome to {member.server.name} 🎀', description='Do not forget to respect each others. 😉', color = 0xC72323)
+    embed.set_image(url = 'https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
+    embed.set_thumbnail(url=member.avatar_url)
+    await client.send_message(channel, embed=embed)
 
 @bot.event
 async def on_member_remove(member):
     for channel in member.server.channels:
-        if channel.name == 'welcome', 'welcome2', 'welcome3':
+        if channel.name == '🎉-welcome-🎊':
             embed = discord.Embed(color=0xC72323)
-            embed.set_author(name=f'{member.name} just left the {member.server.name}')
+            embed.set_author(name=f'😢 {member.name} has left the {member.server.name} 😢')
             embed.description='Good bye 👋! We will gonna miss you.'
             embed.set_thumbnail(url=member.avatar_url)
             await bot.send_message(channel, embed=embed)
