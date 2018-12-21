@@ -115,11 +115,11 @@ async def on_member_join(member):
            embed.set_thumbnail(url=member.avatar_url) 
            embed.set_footer(text='We now have {} members'.format(str(member.server.member_count)))
     print("This user "+ member.name)
-    channel = discord.utils.get(client.get_all_channels(), server__name="BC GAMER'S", name='🎉-welcome-🎊')
+    channel = discord.utils.get(bot.get_all_channels(), server__name="BC GAMER'S", name='🎉-welcome-🎊')
     embed = discord.Embed(title=f'🎀{member.name} welcome to {member.server.name} 🎀', description='Do not forget to respect each others. 😉', color = 0xC72323)
     embed.set_image(url = 'https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
     embed.set_thumbnail(url=member.avatar_url)
-    await client.send_message(channel, embed=embed)
+    await bot.send_message(channel, embed=embed)
 
 @bot.event
 async def on_member_remove(member):
