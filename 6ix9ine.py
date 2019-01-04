@@ -102,32 +102,30 @@ async def test (ctx):
     print("KKKKKKKKKKKKKKKKKKKKKKKKKKK")
     print("KKKKKKKKKKKKKKKKKKKKKKKKKKK")
     print("KKKKKKKKKKKKKKKKKKKKKKKKKKK")
-    await bot.say("Bot is working 99.99%")
+    await bot.say("Bot is working...")
+    await asyncio.sleep(1)
     await bot.say("Okay?")
 
 @bot.event
 async def on_member_join(member):
     for channel in member.server.channels:
-        if channel.name == '🎉-welcome-🎊':
-           embed = discord.Embed(color=0xC72323)
-           embed.set_author(name=f':tada: Welcome **{member.name}** to **{member.server.name}** :tada:')
-           embed.description = 'Please 🙏 do not forget to respect each others.'
-           embed.set_thumbnail(url=member.avatar_url) 
-           embed.set_footer(text='We now have {} members'.format(str(member.server.member_count)))
-    print("This user "+ member.name)
-    channel = discord.utils.get(bot.get_all_channels(), server__name="BC GAMER'S", name='🎉-welcome-🎊')
-    embed = discord.Embed(title=f'🎀{member.name} welcome to {member.server.name} 🎀', description='Do not forget to respect each others. 😉', color = 0xC72323)
-    embed.set_image(url = 'https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
-    embed.set_thumbnail(url=member.avatar_url)
-    await bot.send_message(channel, embed=embed)
+        if channel.name == '🌟-welcome-🌟':
+            embed = discord.Embed(color=0xC72323)
+            embed.set_author(name="🎉 New member has joined 🎉", icon_url=member.avatar_url)
+            embed.description = f'**Welcome ``{member.name}#{member.discriminator}`` to {member.server.name}**\n\nPlease 🙏 do not forget to respect each others and follow the rules.'
+            embed.set_thumbnail(url=member.avatar_url)
+            embed.timestamp = datetime.datetime.utcnow()
+            embed.set_footer(text='We are now  {} members'.format(str(member.server.member_count)))
+            await bot.send_message(channel, embed=embed)
 
 @bot.event
 async def on_member_remove(member):
     for channel in member.server.channels:
-        if channel.name == '🎉-welcome-🎊':
+        if channel.name == '🌟-goodbye-🌟':
             embed = discord.Embed(color=0xC72323)
-            embed.set_author(name=f'😢 {member.name} has left the {member.server.name} 😢')
-            embed.description='Good bye 👋! We will gonna miss you.'
+            embed.description = f"Peace out ``{member.name}#{member.discriminator}``✌!\n\nWe will gonna miss you in the ``{member.server.name}`` server."
+            embed.set_author(name="👋 Member has left 👋", icon_url=member.avatar_url)
+            embed.timestamp = datetime.datetime.utcnow()
             embed.set_thumbnail(url=member.avatar_url)
             await bot.send_message(channel, embed=embed)
 
